@@ -1,4 +1,4 @@
-(ns foo-bar.divideLater)
+(ns clojure_introduction.divideLater)
 
 ;;;; STARTING WITH THE CLASSIC
 (println "Hello World")
@@ -282,3 +282,15 @@
   (println key "<and>" value))
 
 (map destructing-map-entries hash-second-level-map)
+
+;; conj e cons
+
+(conj [2 3] 1)
+
+(conj '(2 3) 1)
+
+; OBS: '() represents a list
+
+(cons 1 [2 3])
+
+(cons 1 '(2 3))
