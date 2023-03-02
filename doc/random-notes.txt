@@ -1,0 +1,3 @@
+- Clojure strings are Java strings so we can use Java String's methods on them.
+
+- 'pprint' function prints the given information in a prettier and more understandable way.

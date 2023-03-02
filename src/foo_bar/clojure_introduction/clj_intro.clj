@@ -1,7 +1,9 @@
-(ns clojure_introduction.divideLater)
+(ns foo-bar.clojure-introduction.clj-intro 
+  (:require [clojure.pprint :as pprint]))
 
 ;;;; STARTING WITH THE CLASSIC
 (println "Hello World")
+(pprint/pprint ["Hello World", "Yasmin"])
 
 ; OBS.1: 'def' keyword is used to define symbols
 (def first-number 10)

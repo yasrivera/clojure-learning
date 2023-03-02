@@ -2,10 +2,15 @@
 ```clojure
 (println "Hello world")
 ```
-First lesson: `println` returns `nil` value by default. So when setting a REPL server and evaluating it, probably `nil` will be there after the main message. This actually leads to another important point characteristic of clojure: **every expression returns a value.** `if` expression returns `nil` value if `else` branch is not defined, for example.
-<br/><br/>
+First lesson: `println` returns `nil` value by default. So when setting a REPL server and evaluating it, probably `nil` will be there after the main message. This actually leads to another important point characteristic of clojure: **every expression returns a value.** `if` expression returns `nil` value if `else` branch is not defined, for example. Fortunatelly, there's a function that can be used (after being imported) to print more complex data structures (such as mapsin a prettier way:
+```clojure
+(pprint "Hello World")
+```
+<br/>
+
 # Symbols and functions
 **Immutability** is an important characteristic of functional programming, so variable is not a thing, right? Here, we create **symbols** and **functions**. Symbols are created using `def` and functions, `defn`. Clojure documentation has an interesting explanation for this nomenclature:
+
 > _It might be useful to think of `defn` as a contraction of `def` and `fn`. The `fn` defines the function and the `def` binds it to a name._
 
 Below there's a really good example that illustrate that from the documentation itself:
@@ -78,6 +83,18 @@ Using `let` to create symbols with local scope instead of creating a symbol with
   [total]
   (def discount 0.1)
   (* total (- 1 0.1)))
+```
+
+- Using `#()` to create an anonymous function
+
+```clojure
+(#(+ % 5) 3)
+```
+
+- Using `partial` keyword
+
+```clojure
+((partial + 5) 3)
 ```
 
 <br/>
@@ -160,7 +177,7 @@ Something interesting to add here is that `'if'` here is actually what we call a
 
 <br/>
 
-# Vectors and methods
+# Collections and methods
 
 ```clojure
 (def first-vector ["A", "B", "C", "D"])
@@ -195,6 +212,12 @@ Before seeing some methods that can be used with vectors, it's important to high
 ```clojure
 (conj '("G", "H") "F")
 ```
+
+<br/>
+
+> `conj` function can not only be used by vectors but by lists, sets and maps too. When operating on a set, the conj function returns a new set with one or more keys "added"; on a list, returns a new list with one or more items "added" to the front; on a map, returns a new map with one or more key-value pairs "added"; and as we saw, on a vector, returns a new vector with one or more items "added" to the end.
+
+<br/>
 
 - Using `get` function to access some position in a vector.
   
